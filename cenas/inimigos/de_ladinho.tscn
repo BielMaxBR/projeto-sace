@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/inimigos/de ladin.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/nimigos/de_ladinho.gd" type="Script" id=2]
+[ext_resource path="res://cenas/inimigos/area de dano.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 42.0502, 34.9385 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.1291, 32.5575 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 5.57478
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 3.98356
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 5.95234
+
+[node name="Ladinho" type="KinematicBody2D" groups=[
+"inimigo",
+]]
+script = ExtResource( 2 )
+
+[node name="Area de dano" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area de dano"]
+position = Vector2( 0.793701, 7.93701 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Anima" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+frame = 2
+
+[node name="L_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="L_up"]
+position = Vector2( -31.813, 7.62939e-06 )
+shape = SubResource( 7 )
+
+[node name="L_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="L_down"]
+position = Vector2( -51.9774, 51.4418 )
+shape = SubResource( 8 )
+
+[node name="R_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R_up"]
+position = Vector2( 31.7311, 0.71183 )
+shape = SubResource( 9 )
+
+[node name="R_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R_down"]
+position = Vector2( 53.426, 52.8654 )
+shape = SubResource( 8 )
+[connection signal="body_entered" from="L_up" to="." method="_on_L_up_body_entered"]
+[connection signal="body_exited" from="L_down" to="." method="_on_L_down_body_exited"]
+[connection signal="body_entered" from="R_up" to="." method="_on_R_up_body_entered"]
+[connection signal="body_exited" from="R_down" to="." method="_on_R_down_body_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/outro_tiro.wav-9c2000ef52409641856008d6adca045f.sample"
+
+[deps]
+
+source_file="res://sons/outro_tiro.wav"
+dest_files=[ "res://.import/outro_tiro.wav-9c2000ef52409641856008d6adca045f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

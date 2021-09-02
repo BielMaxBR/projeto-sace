@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/voltador.gd" type="Script" id=1]
+[ext_resource path="res://sprites/voltar.png" type="Texture" id=2]
+[ext_resource path="res://sons/botao.wav" type="AudioStream" id=3]
+
+[node name="Voltador" type="TextureButton"]
+margin_left = 555.921
+margin_top = 472.176
+margin_right = 710.921
+margin_bottom = 548.176
+texture_normal = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Botão" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

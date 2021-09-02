@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://cenas/inimigos/area de dano.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/inimigos/idiota.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/nimigos/torreta de ar.gd" type="Script" id=3]
+[ext_resource path="res://sons/outro_tiro.wav" type="AudioStream" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.3802
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 38.9384
+
+[node name="torreta" type="StaticBody2D" groups=[
+"inimigo",
+]]
+script = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -0.153805, 0.323223 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+region_filter_clip = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Area de dano" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area de dano"]
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 0.66922, 0.590928 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 40.7229, -0.0404896 )
+
+[node name="tiro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

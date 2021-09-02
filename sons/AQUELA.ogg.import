@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AQUELA.ogg-ac78d17f8e791d599301d71276aeaf21.oggstr"
+
+[deps]
+
+source_file="res://sons/AQUELA.ogg"
+dest_files=[ "res://.import/AQUELA.ogg-ac78d17f8e791d599301d71276aeaf21.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

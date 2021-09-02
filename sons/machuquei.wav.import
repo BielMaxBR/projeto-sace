@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/machuquei.wav-39a3f4b50c56fa8e598ab04d1f4dcdaf.sample"
+
+[deps]
+
+source_file="res://sons/machuquei.wav"
+dest_files=[ "res://.import/machuquei.wav-39a3f4b50c56fa8e598ab04d1f4dcdaf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
